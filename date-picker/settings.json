@@ -1,0 +1,8 @@
+{
+    "editor.suggestSelection": "first",
+    "prettier.stylelintIntegration": true,
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "[javascript]": {
+      "editor.formatOnSave": true
+    }
+}
