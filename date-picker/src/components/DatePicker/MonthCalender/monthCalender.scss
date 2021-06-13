@@ -1,0 +1,19 @@
+.month-calender {
+  width: 350px;
+  border: 1px solid #333;
+  padding: 16px;
+  border: 1px solid #333;
+
+  .body {
+    display: flex;
+    flex-wrap: wrap;
+
+    .month-cell {
+      height: 87px;
+    }
+
+    div {
+      width: calc(100% / 4);
+    }
+  }
+}

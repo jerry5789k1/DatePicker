@@ -1,0 +1,18 @@
+.day-calender {
+  width: 350px;
+  padding: 16px;
+  border: 1px solid #333;
+
+  .body {
+    display: flex;
+    flex-wrap: wrap;
+
+    div {
+      width: calc(100% / 7);
+    }
+  }
+}
+
+.week-col {
+  display: flex;
+}

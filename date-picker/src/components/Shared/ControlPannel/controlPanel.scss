@@ -1,0 +1,35 @@
+.controller {
+  display: flex;
+
+  .next,
+  .prev,
+  .display-block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+    transition: 0.2s;
+    padding: 8px;
+  }
+
+  .next,
+  .prev {
+    flex: 2;
+
+    &:hover {
+      cursor: pointer;
+      color: rgb(96, 187, 240);
+    }
+  }
+
+  .display-block {
+    flex: 6;
+    font-weight: bold;
+    font-size: 16px;
+
+    &:not(.disabled):hover {
+      background: rgb(230, 225, 225);
+      cursor: pointer;
+    }
+  }
+}

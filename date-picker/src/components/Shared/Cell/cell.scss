@@ -1,0 +1,45 @@
+.cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  padding: 8px;
+  box-sizing: border-box;
+  height: 50px;
+  position: relative;
+
+  &:not(.disable):hover {
+    color: #fff;
+    cursor: pointer;
+
+    &::after {
+      content: "";
+      z-index: -1;
+      position: absolute;
+      display: inline-block;
+      height: 50px;
+      width: 50px;
+      background: #db3d44;
+      border-radius: 50%;
+    }
+  }
+}
+
+.active {
+  color: #fff;
+
+  &::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    background: #db3d44;
+    border-radius: 50%;
+  }
+}
+
+.disable {
+  color: #eeeeee;
+}
