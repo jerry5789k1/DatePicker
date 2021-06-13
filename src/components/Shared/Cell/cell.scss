@@ -8,7 +8,7 @@
   height: 50px;
   position: relative;
 
-  &:not(.disable):hover {
+  &:not(.disable):not(.active):hover {
     color: #fff;
     cursor: pointer;
 
@@ -19,7 +19,7 @@
       display: inline-block;
       height: 50px;
       width: 50px;
-      background: #db3d44;
+      background: #b4b0b0;
       border-radius: 50%;
     }
   }
