@@ -10,6 +10,7 @@ export const useDate = (year, month) => {
 
   const lastDayOfPrevMonth = new Date(year, month - 1, 0).getDate();
 
+  // Get the date we need to display for prevMonth
   const displayDatesOfPrevMonth = [];
   for (let i = currentMonthStartDay; i > 0; i--) {
     // handle edge of the year
@@ -44,7 +45,6 @@ export const useDate = (year, month) => {
     }
   );
 
-  // 可以控制多少範圍的 day 你要顯示
   const extraDay = 42 - (displayDatesOfPrevMonth.length + displayDates.length);
 
   const displayDatesOfNextMonth = [];
