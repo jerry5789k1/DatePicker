@@ -2,7 +2,7 @@ import React from "react";
 import DatePicker from "../DatePicker";
 import dateReducer from "../../reducer/dateReducer";
 
-const DatePickerInput = () => {
+const DatePickerInput = ({ onSelect }) => {
   const [currentSelectedDate, dispatch] = React.useReducer(
     dateReducer,
     { year: null, month: null, date: null },
@@ -21,8 +21,10 @@ const DatePickerInput = () => {
     return `${year}-${normalize(month)}-${normalize(date)}`;
   };
 
-  const handleDateSelect = (year, month, date) =>
+  const handleDateSelect = (year, month, date) => {
     dispatch({ type: "UPDATE", year, month, date });
+    onSelect && onSelect(year, month, date);
+  };
 
   return (
     <>
@@ -37,6 +39,7 @@ const DatePickerInput = () => {
               month: parseInt(month),
               date: parseInt(date),
             });
+            onSelect && onSelect(year, month, date);
           }}
           value={parseCurrentValueToInputFormat(
             currentSelectedDate.year,
