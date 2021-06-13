@@ -7,7 +7,7 @@ import Cell from "../../Shared/Cell";
 import { useDate } from "../../../hooks/useDate";
 import { DAYS, MONTHS } from "../../../constant/date";
 
-import "./dayCalender.scss";
+import "./dayCalendar.scss";
 
 const Calender = ({
   year,

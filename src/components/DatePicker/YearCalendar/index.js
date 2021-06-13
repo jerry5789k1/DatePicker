@@ -4,7 +4,7 @@ import Cell from "../../Shared/Cell";
 
 import useDecade from "../../../hooks/useDecade";
 
-import "./yearCalender.scss";
+import "./yearCalendar.scss";
 
 export const DAYS = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
 

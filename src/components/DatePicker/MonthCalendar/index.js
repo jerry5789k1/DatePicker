@@ -4,7 +4,7 @@ import Cell from "../../Shared/Cell";
 
 import { MONTHS } from "../../../constant/date";
 
-import "./monthCalender.scss";
+import "./monthCalendar.scss";
 
 const MonthCalender = ({ year, month, onChange, yearUpdater, modeUpdater }) => {
   const yearToNum = parseInt(year);

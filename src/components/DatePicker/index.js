@@ -1,6 +1,6 @@
 import React from "react";
-import DayCalender from "./DayCalender";
-import MonthCalender from "./MonthCalender";
+import DayCalender from "./DayCalendar";
+import MonthCalender from "./MonthCalendar";
 import YearCalender from "./YearCalendar";
 import dateReducer from "../../reducer/dateReducer";
 
