@@ -36,13 +36,14 @@ const Calender = ({
 
       <Header>
         {DAYS.map((value) => (
-          <HeaderCell>{value}</HeaderCell>
+          <HeaderCell key={value}>{value}</HeaderCell>
         ))}
       </Header>
       <div className="body">
-        {dates.map((date) => {
+        {dates.map((date, i) => {
           return (
             <Cell
+              key={`${date.dateString}-${i}`}
               active={date.dateString === currentActiveDate}
               onClick={() => onChange(date.value)}
               disable={!date.isDayOfCurrentMonth}

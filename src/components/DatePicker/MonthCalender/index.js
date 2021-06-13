@@ -22,6 +22,7 @@ const MonthCalender = ({ year, month, onChange, yearUpdater, modeUpdater }) => {
         {MONTHS.map((mon, index) => {
           return (
             <Cell
+              key={mon}
               className="month-cell"
               active={month === index + 1}
               onClick={() => onChange(index + 1)}

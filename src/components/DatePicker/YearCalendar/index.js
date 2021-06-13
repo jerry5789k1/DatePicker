@@ -23,6 +23,7 @@ const YearCalender = ({ year, onChange }) => {
         {duration.map((y) => {
           return (
             <Cell
+              key={y.value}
               className="year-cell"
               active={y.value === year}
               onClick={() => onChange(y.value)}
