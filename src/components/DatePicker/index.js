@@ -2,29 +2,9 @@ import React from "react";
 import DayCalender from "./DayCalender";
 import MonthCalender from "./MonthCalender";
 import YearCalender from "./YearCalendar";
+import dateReducer from "../../reducer/dateReducer";
 
 import "./datePicker.scss";
-
-const dateReducer = (state, action) => {
-  switch (action.type) {
-    case "UPDATE_YEAR":
-      return { ...state, year: action.year };
-    case "UPDATE_MONTH": {
-      if (action.month < 1) {
-        return { ...state, year: state.year - 1, month: 12 };
-      }
-      if (action.month > 12) {
-        return { ...state, year: state.year + 1, month: 1 };
-      }
-
-      return { ...state, month: action.month };
-    }
-    case "UPDATE_DATE":
-      return { ...state, date: action.date };
-    default:
-      return state;
-  }
-};
 
 const DatePicker = ({
   onSelect,
@@ -47,9 +27,9 @@ const DatePicker = ({
     }
   );
   const [mode, setMode] = React.useState("DATE");
-
-  const isControlled =
-    controlledYear && controlledMonth && controlledDate && onSelect;
+  const isControlled = Boolean(
+    controlledYear && controlledMonth && controlledDate && onSelect
+  );
   let yearState = isControlled ? controlledYear : state.year;
   let monthState = isControlled ? controlledMonth : state.month;
   let dateState = isControlled ? controlledDate : state.date;

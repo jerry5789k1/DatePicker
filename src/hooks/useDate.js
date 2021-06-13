@@ -26,7 +26,7 @@ export const useDate = (year, month) => {
       value: date,
       displayValue: lastDayOfPrevMonth - i + 1,
       isDayOfCurrentMonth: false,
-      dateString: getDateString(currentYear, month - 1, date),
+      dateString: getDateString(currentYear, currentMonth, date),
     });
   }
 
