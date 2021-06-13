@@ -7,6 +7,10 @@
     display: flex;
     flex-wrap: wrap;
 
+    .highlight {
+      color: #db3d44;
+    }
+
     div {
       width: calc(100% / 7);
     }

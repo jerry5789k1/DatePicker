@@ -66,9 +66,12 @@ export const useDate = (year, month) => {
     });
   }
 
-  return [
-    ...displayDatesOfPrevMonth,
-    ...displayDates,
-    ...displayDatesOfNextMonth,
-  ];
+  return {
+    dates: [
+      ...displayDatesOfPrevMonth,
+      ...displayDates,
+      ...displayDatesOfNextMonth,
+    ],
+    today: `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`,
+  };
 };

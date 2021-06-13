@@ -1,4 +1,5 @@
 import React from "react";
+import cx from "classnames";
 import Header from "../../Shared/Header";
 import HeaderCell from "../../Shared/HeaderCell";
 import ControlPannel from "../../Shared/ControlPannel";
@@ -17,10 +18,11 @@ const Calender = ({
   monthUpdater,
   modeUpdater,
 }) => {
-  const dates = useDate(year, month);
+  const { dates, today } = useDate(year, month);
   const monthWording = MONTHS.find((_, i) => {
     return i + 1 === month;
   });
+
   const currentActiveDate = `${year}-${month}-${date}`;
   const displayDate = `${monthWording} ${year}`;
 
@@ -41,10 +43,14 @@ const Calender = ({
       </Header>
       <div className="body">
         {dates.map((date, i) => {
+          const isActive = date.dateString === currentActiveDate;
           return (
             <Cell
+              className={cx({
+                highlight: date.dateString === today && !isActive,
+              })}
               key={`${date.dateString}-${i}`}
-              active={date.dateString === currentActiveDate}
+              active={isActive}
               onClick={() => onChange(date.value)}
               disable={!date.isDayOfCurrentMonth}
             >
